@@ -12,8 +12,6 @@ public class Bullet {
 	Enemy enemy[];
 	Dude p;
 
-	int speed;
-
 	
 	public Bullet(int startX, int startY, Enemy[] enemy){
 		x = startX;
@@ -22,13 +20,12 @@ public class Bullet {
 		img = newBullet.getImage();
 		this.enemy = enemy;
 	}
-	public Bullet(int startX, int startY, Dude p, int speed){
+	public Bullet(int startX, int startY, Dude p){
 		x = startX;
 		y = startY;
 		ImageIcon newBullet = new ImageIcon("src/res/bullet_img(en)__.png");
 		imgEn = newBullet.getImage();
 		this.p = p;
-		this.speed = speed;
 	}
 	
 	public int getX(){
