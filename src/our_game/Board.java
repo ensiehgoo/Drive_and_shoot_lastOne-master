@@ -81,7 +81,7 @@ public class Board extends JPanel implements ActionListener, Measurements{
 		for (int w = 0; w < bull.size(); w++) {
 			Bullet m = (Bullet) bull.get(w);
 			if (m.getVisible() == true && en1.isAlive) {
-				for (int j=0; j<10; j++) {
+				/*for (int j=0; j<10; j++) {*/
 					m.enemyMove();//enemy shooting
 
 				/*if (!m.enemyMove()) {
@@ -89,7 +89,7 @@ public class Board extends JPanel implements ActionListener, Measurements{
 
 				}*/
 				}
-			}
+		/*	}*/
 			else
 				bull.remove(w);
 		}
@@ -182,7 +182,7 @@ public class Board extends JPanel implements ActionListener, Measurements{
 				if (enemy[i].getX() < 0) {
 					enemy[i].x = 1024;
 					enemy[i].isAlive = true;
-					
+
 					enemy[i].setImage();
 
 				}
@@ -200,32 +200,33 @@ public class Board extends JPanel implements ActionListener, Measurements{
 						/*if (m.getX() < 0){
 							m.x = 1024;
 						}
-						*/
-							System.out.println("Enemy shooting x : " + m.getX() + " Enemy shooting y : " + m.getY());
-							if (m.getX() <= 394 && m.getY() <= 473 && m.getY() >= 435) {
-								Over.render(g);
-								time.stop();
-							}
+*/
+						System.out.println("Enemy shooting x : " + m.getX() + " Enemy shooting y : " + m.getY());
+						if (m.getX() <= 394 && Math.abs(p.y-m.getY())<=39) {
+							Over.render(g);
+							time.stop();
+						}
 					}
 				}
 			}
 		}
 
+
 		//collision!
 		ImageIcon img = new ImageIcon("src/res/boom.png");
-		
+
 		for(int i = 0; i < enemy.length; i++){
-			if (enemy[i].isAlive && Math.abs(300 - enemy[i].getX()) <= 94 && Math.abs(p.y - enemy[i].getY()) <= 30) {
+			if (enemy[i].isAlive && Math.abs(300 - enemy[i].getX()) <= 94 && Math.abs(p.y - enemy[i].getY()) <= 39) {
 				System.out.println(p.x + " " + p.y + ", " + enemy[i].getX() + " " + enemy[i].getY());
 				System.out.println("Collide");
-				
+
 					g2d.drawImage(img.getImage(), 300+65, p.getY(), null);//drawing image of collision
 					enemy[i].isAlive = false;
 					Over.render(g);
 					time.stop();
 			}
 		}
-		
+
 
 //			 if(p.getnx() > 500)
 //				 if(en2.Alive() == true)
