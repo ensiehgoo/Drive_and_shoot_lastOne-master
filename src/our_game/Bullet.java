@@ -72,8 +72,8 @@ public class Bullet {
 /*
 		System.out.println("Bullet x : " + getX() + " Bullet y: " + getY() + " Player x : " + p.getX() + " Player y : "+ p.getY());
 */
-		x = x-3;
-		if (x <= 394 && y <= 473 && y >= 435){
+		x = x-6;
+		if (x <= 394 && Math.abs(p.y-y)<=39){
 			visible = false;
 			return false;
 		}
