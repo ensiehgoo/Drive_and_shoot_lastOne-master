@@ -44,7 +44,7 @@ public class Enemy {
 	}
 
 	public  void enemyFire(){
-		Bullet z = new Bullet(getX(),getY()+20,p,3);
+		Bullet z = new Bullet(getX(),getY()+20,p);
 		bull.add(z);
 	}
 
