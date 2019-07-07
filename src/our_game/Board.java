@@ -194,28 +194,18 @@ public class Board extends JPanel implements ActionListener, Measurements{
 					ArrayList bull = Enemy.getBull();
 
 					for (int w = 0; w < bull.size(); w++) {
-						Bullet m = (Bullet) bull.get(w);
-						g2d.drawImage(m.getImageEnemy(), m.getX()-5, m.getY()+5, null);//drawing image of bullet
-<<<<<<< Updated upstream
-						if (m.getX() < 0){
-							m.x = 1024;
-						}
-
-
-						System.out.println("Enemy shooting x : "+m.getX() + " Enemy shooting y : "+m.getY());
-						if(m.getX()<=400 &&  m.getY()>=435 && m.getY() <= 397){
-=======
+							Bullet m = (Bullet) bull.get(w);
+							g2d.drawImage(m.getImageEnemy(), m.getX() - 5, m.getY() + 5, null);//drawing image of bullet
 
 						/*if (m.getX() < 0){
 							m.x = 1024;
 						}
 						*/
-						System.out.println("Enemy shooting x : "+m.getX() + " Enemy shooting y : "+m.getY());
-						if(m.getX()<=394 &&  m.getY() <=473 && m.getY() >= 435){
->>>>>>> Stashed changes
-							Over.render(g);
-							time.stop();
-						}
+							System.out.println("Enemy shooting x : " + m.getX() + " Enemy shooting y : " + m.getY());
+							if (m.getX() <= 394 && m.getY() <= 473 && m.getY() >= 435) {
+								Over.render(g);
+								time.stop();
+							}
 					}
 				}
 			}
