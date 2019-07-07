@@ -196,7 +196,7 @@ public class Board extends JPanel implements ActionListener, Measurements{
 						g2d.drawImage(m.getImageEnemy(), m.getX()-5, m.getY()+8, null);//drawing image of bullet
 
 
-						if(m.getX()<=400 &&  Math.abs(m.getY()-435)<=39 && m.getY()>435){
+						if(m.getX()<=400 &&  Math.abs(m.getY()-435)<=6 && m.getY()>435){
 							Over.render(g);
 							time.stop();
 						}
