@@ -12,7 +12,8 @@ public class Bullet {
 	Enemy enemy[];
 	Dude p;
 
-	
+
+
 	public Bullet(int startX, int startY, Enemy[] enemy){
 		x = startX;
 		y = startY;
@@ -27,7 +28,7 @@ public class Bullet {
 		imgEn = newBullet.getImage();
 		this.p = p;
 	}
-	
+
 	public int getX(){
 		return x;
 	}
@@ -55,7 +56,7 @@ public class Bullet {
 
 		if(x>1024) visible = false;
 	}
-	
+
 	public void leftMove (){
 		x = x - 5;
 		for(int i = 0; i < enemy.length; i++){
@@ -71,8 +72,8 @@ public class Bullet {
 /*
 		System.out.println("Bullet x : " + getX() + " Bullet y: " + getY() + " Player x : " + p.getX() + " Player y : "+ p.getY());
 */
-		x = x-6;
-		if(x<=300 &&  Math.abs(y-435)<=39 && y>435){
+		x = x-3;
+		if (x <= 394 && y <= 473 && y >= 435){
 			visible = false;
 			return false;
 		}
