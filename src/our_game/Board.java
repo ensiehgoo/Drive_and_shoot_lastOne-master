@@ -81,12 +81,14 @@ public class Board extends JPanel implements ActionListener, Measurements{
 		for (int w = 0; w < bull.size(); w++) {
 			Bullet m = (Bullet) bull.get(w);
 			if (m.getVisible() == true && en1.isAlive) {
-				m.enemyMove();//enemy shooting
+				for (int j=0; j<10; j++) {
+					m.enemyMove();//enemy shooting
 
 				/*if (!m.enemyMove()) {
 					time.stop();
 
 				}*/
+				}
 			}
 			else
 				bull.remove(w);
@@ -193,10 +195,14 @@ public class Board extends JPanel implements ActionListener, Measurements{
 
 					for (int w = 0; w < bull.size(); w++) {
 						Bullet m = (Bullet) bull.get(w);
-						g2d.drawImage(m.getImageEnemy(), m.getX()-5, m.getY()+8, null);//drawing image of bullet
+						g2d.drawImage(m.getImageEnemy(), m.getX()-5, m.getY()+5, null);//drawing image of bullet
+						if (m.getX() < 0){
+							m.x = 1024;
+						}
 
 
-						if(m.getX()<=400 &&  Math.abs(m.getY()-435)<=6 && m.getY()>435){
+						System.out.println("Enemy shooting x : "+m.getX() + " Enemy shooting y : "+m.getY());
+						if(m.getX()<=400 &&  m.getY()>=435 && m.getY() <= 397){
 							Over.render(g);
 							time.stop();
 						}
